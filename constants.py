@@ -1,0 +1,1 @@
+game_ids = {'League of Legends': 21779}

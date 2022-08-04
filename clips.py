@@ -3,8 +3,6 @@ import api_access
 import key
 import requests
 
-game_ids = {'League of Legends': 21779}
-
 
 def get_clips(game_id, days_before=1):
     delta = datetime.timedelta(days=days_before)
