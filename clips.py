@@ -1,11 +1,15 @@
 import datetime
 import api_access
-import key
 import requests
-import constants
-
 
 def get_clips(game_id, days_before=1, num_top_clips=1):
+    """Returns the top clips for a given game_id.
+
+    Keyword arguments:
+    game_id -- the game_id of the game to get clips for
+    days_before -- the number of days before the current date to get clips for
+    num_top_clips -- the number of top clips to get
+    """
     delta = datetime.timedelta(days=days_before)
     time = (datetime.datetime.now() - delta).isoformat('T') + 'Z'
     url = 'https://api.twitch.tv/helix/clips'
@@ -16,5 +20,3 @@ def get_clips(game_id, days_before=1, num_top_clips=1):
         clips_list.append(response.json()['data'][i]['url'])
     return clips_list
 
-
-#print(get_clips(constants.game_ids['League of Legends'], 1, 5))

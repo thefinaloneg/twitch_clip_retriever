@@ -10,6 +10,11 @@ import constants
 
 
 def download_clips(downloads_folder_path):
+    """Downloads clips from Twitch.tv.
+
+    Keyword arguments:
+    downloads_folder_path -- the folder to download clips to
+    """
     driver = webdriver.Safari()
     driver.get("https://clipsey.com/")  # load the page
     ele_1 = driver.find_element(By.CLASS_NAME, "clip-url-input")

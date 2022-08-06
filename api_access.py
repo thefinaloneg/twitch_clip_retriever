@@ -5,6 +5,7 @@ import key
 
 
 def get_access_token():
+    """Returns the access token for the API."""
     url = 'https://id.twitch.tv/oauth2/token'
     data = {'client_id': key.client_id, 'client_secret': key.client_secret, 'grant_type': 'client_credentials'}
     response = requests.post(url, data=data)
